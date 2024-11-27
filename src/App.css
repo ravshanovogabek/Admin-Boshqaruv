@@ -1,38 +1,139 @@
-.App {
-  text-align: center;
+/* Default Variables */
+:root {
+  --primary-color: #14859c;
+  
+  --dark-color: #1c4333;
+  --text-color: #6437eb;
+  --gradient: linear-gradient(135deg, #13a8a8, #0dfafa);
+  --text-dark: #3f49d2;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Dark Mode Variables */
+body.dark-mode {
+  --primary-color: #49095f;
+  --secondary-color: #19052e;
+  --dark-color: #1b4332;
+  --text-color: #2e5f36;
+  --gradient: linear-gradient(135deg, #4e9f3d, #1b4332);
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #020928;
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Links and Buttons */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
   min-height: 100vh;
+  background: var(--secondary-color);
+  animation: fadeIn 1s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  transition: width 0.4s ease, transform 0.4s ease;
+  background: var(--primary-color);
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 80px;
+  transition: margin-left 0.4s ease;
+}
+
+.sidebar-nav a {
+  color: inherit;
+  transition: background 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: white;
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  padding: 0.6rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 40px;
+  height: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.theme-toggle-btn:hover {
+  background: var(--text-color);
+  color: #fff;
+  transform: scale(1.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.theme-toggle-btn span {
+  display: none;
+}
+
+.theme-toggle-btn.active span {
+  display: inline-block;
+}
+
+/* Keyframe for FadeIn Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

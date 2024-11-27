@@ -1,0 +1,215 @@
+:root {
+  --primary-gradient: linear-gradient(90deg, #a855f7, #9333ea);
+  --background-color: #0d123b;
+  --box-background: #1b1147;
+  --text-color: #f8fafc;
+  --muted-text-color: #94a3b8;
+  --button-hover: #9333ea;
+  --error-color: #ef4444;
+  --google-color: #146dfd;
+  --apple-color: #000000;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.login-box {
+  background: var(--box-background);
+  border-radius: 15px;
+  padding: 30px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+  color: var(--text-color);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.social-login {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-login {
+  background: var(--google-color);
+}
+
+.google-login:hover {
+  background: #3367d6;
+}
+
+.apple-login {
+  background: var(--apple-color);
+}
+
+.apple-login:hover {
+  background: #000;
+}
+
+.or-text {
+  color: var(--muted-text-color);
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2d3748;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.login-box input:focus {
+  outline: none;
+  border-color: var(--primary-gradient);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.forgot-password {
+  color: var(--primary-gradient);
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--error-color);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.btn.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-gradient);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(148, 51, 234, 0.4);
+}
+
+.btn.submit-btn:hover {
+  background: var(--button-hover);
+}
+
+.signup-text {
+  color: var(--muted-text-color);
+  margin-top: 15px;
+}
+
+.signup-text a {
+  color: var(--primary-gradient);
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+.select-email-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.select-email-container select {
+  width: 100%;
+  padding: 12px;
+  background-color: #2d3748;
+  color: var(--text-color);
+  border-radius: 8px;
+  border: 1px solid #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.select-email-container select:focus {
+  outline: none;
+  border-color: var(--primary-gradient);
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.password-input, .email-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.password-input input, .email-input input {
+  width: 100%;
+  padding: 12px;
+  margin-left: 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #2d3748;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.password-input input:focus, .email-input input:focus {
+  outline: none;
+  border-color: var(--primary-gradient);
+}
+
+.btn.back-btn {
+  margin-top: 15px;
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.btn.back-btn:hover {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
