@@ -1,6 +1,7 @@
+/* Sidebar styles */
 .sidebar {
   width: 250px;
-  height: 100vh;
+  height: 98vh; /* Full viewport height */
   color: #fff;
   position: fixed;
   top: 0;
@@ -11,18 +12,18 @@
   z-index: 10;
   backdrop-filter: blur(10px);
   background-color: rgba(0, 0, 0, 0.932);
-  height: 712px;
-  margin-left: 9px;
-  margin-top: 9px;
   border-radius: 20px;
-  overflow: hidden;
-  
+  overflow: auto; /* Allow scrolling if content overflows */
+  margin-left: 10px;
+  margin-top: 6px;
 }
 
+/* Sidebar collapsed */
 .sidebar.collapsed {
   width: 80px;
 }
 
+/* Sidebar header */
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -42,6 +43,7 @@
   color: #06d9dd;
 }
 
+/* Hamburger menu */
 .hamburger-icon {
   font-size: 1.5rem;
   cursor: pointer;
@@ -52,10 +54,12 @@
   transform: rotate(90deg);
 }
 
+/* Sidebar navigation styles */
 .sidebar-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-grow: 1; /* Allow nav items to take available space */
 }
 
 .sidebar-nav li {
@@ -109,15 +113,18 @@
   outline: none;
 }
 
+/* Page content positioning */
 .page-content {
   margin-left: 250px;
   transition: margin-left 0.3s ease;
+  padding: 20px; /* Ensure content doesn't touch the edges */
 }
 
 .sidebar.collapsed ~ .page-content {
   margin-left: 80px;
 }
 
+/* Theme toggle button */
 .theme-toggle {
   padding: 1rem;
   position: absolute;
@@ -146,4 +153,88 @@
 .theme-toggle-btn.active {
   background: #ff922b;
   color: #fff;
+}
+
+/* ------------------------------ Responsive Design ------------------------------ */
+
+/* For Small Screens (Max Width: 768px) */
+@media (max-width: 768px) {
+  /* Adjust the sidebar for mobile devices */
+  .sidebar {
+    width: 60px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+  }
+
+  /* Adjust the page content when sidebar is collapsed */
+  .page-content {
+    margin-left: 60px;
+  }
+
+  /* Sidebar logo font size */
+  .sidebar-logo {
+    font-size: 1.4rem;
+  }
+
+  /* Reduce the font size of sidebar links */
+  .sidebar-nav a {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust theme toggle button size */
+  .theme-toggle-btn {
+    font-size: 1.3rem;
+    padding: 0.4rem;
+  }
+
+  /* Hamburger icon size */
+  .hamburger-icon {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust the theme toggle position on small screens */
+  .theme-toggle {
+    bottom: 10px;
+  }
+}
+
+/* For Extra Small Screens (Max Width: 480px) */
+@media (max-width: 480px) {
+  /* Further reduce the sidebar width */
+  .sidebar {
+    width: 50px;
+  }
+
+  .sidebar.collapsed {
+    width: 50px;
+  }
+
+  /* Page content adjustment */
+  .page-content {
+    margin-left: 50px;
+  }
+
+  /* Sidebar logo font size */
+  .sidebar-logo {
+    font-size: 1.2rem;
+  }
+
+  /* Adjust font size of sidebar links */
+  .sidebar-nav a {
+    font-size: 0.8rem;
+  }
+
+  /* Adjust theme toggle button size */
+  .theme-toggle-btn {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+
+  .hamburger-icon {
+    font-size: 1.3rem;
+  }
 }

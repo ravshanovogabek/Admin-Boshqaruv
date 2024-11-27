@@ -1,6 +1,5 @@
 /* General Page Styling */
 .diary-page-container {
-  
   color: #fdfbfb;
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -172,21 +171,110 @@ button.delete-btn:hover {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+
+/* For Tablets and Smaller Screens (768px and below) */
+@media (max-width: 768px) {
+
+  /* General Page Container */
+  .diary-page-container {
+    padding: 15px;
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* Reduce font size for better fit */
+  }
+
+  /* Entries Container */
+  .entries-container {
+    width: 100%;
+    max-width: 100%;
   }
 
   .entries-container li {
+    padding: 12px 15px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .entries-container li span {
+    margin-bottom: 10px;
+    white-space: normal; /* Allow text to wrap */
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .buttons-container button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal-content input {
+    padding: 10px;
+  }
+
+  .close-btn {
+    padding: 8px 12px;
+  }
+}
+
+/* For Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+
+  /* General Page Container */
+  .diary-page-container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Smaller font size */
+  }
+
+  /* Entries Container */
+  .entries-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .entries-container li {
+    padding: 10px 12px;
     flex-direction: column;
     align-items: flex-start;
   }
 
   .entries-container li span {
-    margin-bottom: 10px;
+    font-size: 0.9rem; /* Slightly smaller text */
+    margin-bottom: 8px;
   }
 
+  /* Buttons */
   button {
-    margin: 5px 0;
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .buttons-container button {
+    font-size: 0.875rem;
+    padding: 7px 12px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-content input {
+    padding: 8px;
+  }
+
+  .close-btn {
+    padding: 7px 10px;
   }
 }
