@@ -13,7 +13,7 @@ const Login = ({ setIsAuthenticated }) => {
 
   const validUsers = {
     'jigar@gmail.com': { name: "Og'abek Ravshanov", password: 'jigar' },
-    'example@gmail.com': { name: "Example User", password: 'example' },
+    
     // Add more users as needed
   };
 
@@ -91,8 +91,7 @@ const Login = ({ setIsAuthenticated }) => {
                   >
                     <option value="">Choose your email</option>
                     <option value="jigar@gmail.com">jigar@gmail.com</option>
-                    <option value="example@gmail.com">example@gmail.com</option>
-                    <option value="user1@gmail.com">user1@gmail.com</option>
+                    
                   </select>
                 </div>
                 {error && <p className="error">{error}</p>}
